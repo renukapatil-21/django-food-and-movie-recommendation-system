@@ -1,0 +1,28 @@
+{% extends 'recommendfood/base.html'%}
+{% block body %}
+
+<h2 style="color:Black">My Food List</h2>
+<hr>
+<br>
+<!-- Movie list -->
+<div class="row">
+    {% if movies %}
+    {% for movie in movies %}
+        <div class="col-sm-2 col-md-2 ">
+            <div class="thumbnail">
+                <h4>{{movie.title}}</h4>
+                <a href="{% url 'detail2' movie.id %}">
+                    <img src="{{ movie.movie_logo.url}}" class="img-responsive">
+                </a>
+                <h5>{{movie.genre}}</h5>
+            </div>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div class="alert alert-danger">
+            <strong>Sorry!</strong> No movies in your list.
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

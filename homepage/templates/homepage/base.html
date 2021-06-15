@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Choice</title>
+
+    <link rel="stylesheet" href="{% static 'homepage\css\bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'HomePage\css\style.css' %}">
+    <link rel="stylesheet" href="{% static 'HomePage\css\mobile-style-css.css' %}">
+   
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid p-0">  {% block basenav %} {% include 'homepage/navbar.html' %} {% endblock basenav %} </div>
+        {% block content %}<div class="container text-center p-0"> {% include 'homepage/section1.html' %} </div>{% endblock content %}
+    </header>
+
+    <main>
+        {% block section2 %}
+            <section class="section2 container-fluid p-0"> {% include 'homepage/section2.html' %} </section>
+        {% endblock section2 %}
+        {% block section3 %}
+            <section class="section3 container-fluid p-0"> {% include 'homepage/section3.html' %} </section>
+        {% endblock section3 %}
+{% comment %}        {% block section4 %}
+            <section class="section4 container-fluid p-0 text-center"> {% include 'homepage/section4.html' %} </section>
+        {% endblock section4 %}{% endcomment %}
+{% comment %}        {% block section5 %}
+            <section class="section5 container-fluid p-0 text-center"> {% include 'homepage/section5.html' %} </section>
+        {% endblock section5 %}{% endcomment %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <div class="container-fluid p-0 mt-3"> {% include 'homepage/footer.html' %} </div>
+        {% endblock footer %}
+    </footer>
+
+
+
+
+    <script src="https://kit.fontawesome.com/c67f44dd52.js" crossorigin="anonymous"></script>
+    <script src="{% static 'HomePage/js/main.js' %}"></script>
+    <script src="{% static 'homepage/js/jquery.js' %}"></script>
+    <script src="{% static 'homepage/js/popper.js' %}"></script>
+    <script src="{% static 'homepage/js/bootstrap.js' %}"></script>
+</body>
+
+</html>

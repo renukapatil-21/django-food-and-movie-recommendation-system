@@ -1,0 +1,25 @@
+{% load static %}
+<div class="row">
+    <div class="col-md-7 col-sm-12 mt-5">
+        <h5>BETTER CHOICE</h5>
+        <h1>"If you want to change your life, make different <b><i>choices</i></b>"</h1>
+        
+        <form class="form-inline">
+            <div class="col pl-2">
+                <div class="input-group pl-3 pt-5 pr-5">
+                    <input type="text" class="form-control bg-light text-danger" placeholder="Search and Rate Dishes">
+                    <div class="input-group-prepend">  
+                        <div class="input-group-text">
+                            <a href="{% url 'food' %}"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5 col-sm-12 h-100 ">
+        <img src="{% static 'homepage/img/meduvada.png' %}" id="sec1img" alt="Medu Vada Image">
+    </div>
+    
+</div>

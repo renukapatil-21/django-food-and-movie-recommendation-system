@@ -1,0 +1,81 @@
+{% load static %}
+{% comment %} Cards {% endcomment %}
+
+<div class="purchase text-center">
+    <h1>Some Of The Best Tastes We Have!</h1>
+    <p>"To eat is a necessity, but to eat intelligently is an art."</p> 
+{% comment %} first card {% endcomment %}
+    <div class="cards">
+        <div class="d-flex flex-row justify-content-center flex-wrap">
+            <div class="card">
+                <img src="{% static 'homepage/img/maha.png' %}" class="card-img-top center" alt="...">
+                <div class="card-body">
+                    <div class="card-title">
+                    <h5>MAHARASTRIAN</h5>
+                    </div>
+                    {% comment %} <p class="card-text">With supporting text below as a natural lead-in</p> {% endcomment %}
+                    <div class="pricing">
+                        <h1>₹299</h1>
+                    </div>
+                    <a href="{% url 'food' %}" class="btn btn-danger px-5 py-2 mb-5">Order Now</a>
+                </div>
+            </div>
+{% comment %} second card {% endcomment %}
+            <div class="card">
+                <img src="{% static 'homepage/img/south.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title">
+                    <h5>SOUTH INDIAN</h5>
+                    </div>
+                    {% comment %} <p class="card-text">With supporting text below as a natural lead-in</p> {% endcomment %}
+                    <div class="pricing">
+                        <h1>₹249</h1>
+                    </div>
+                    <a href="{% url 'food' %}" class="btn btn-danger px-5 py-2 mb-5">Order Now</a>
+                </div>
+            </div>
+{% comment %} third card {% endcomment %}
+            <div class="card">
+                <img src="{% static 'homepage/img/italian.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="card-title">
+                    <h5>ITALIAN</h5>
+                    </div>
+                    {% comment %} <p class="card-text">With supporting text below as a natural lead-in</p> {% endcomment %}
+                    <div class="pricing">
+                        <h1>₹349</h1>
+                    </div>
+                    <a href="{% url 'food' %}" class="btn btn-danger px-5 py-2 mb-5">Order Now</a>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<div class="cover">
+    <div class="content text-center">
+        <h1>Some Features That Make Us Unique</h1>
+        <p>Safety Is Our Priority</p>
+    </div>
+</div>
+<div class="container-fluid text-center">
+    <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
+        <div class="rect">  
+            <img src="{% static 'homepage/img/safe.png' %}" class="section3img" alt="">
+            <p class="mt-3">Safe</p>
+        </div> 
+        <div class="rect"> 
+            <img src="{% static 'homepage/img/fast.png' %}" class="section3img" alt="">
+            <p class="mt-3">Fast</p>
+        </div> 
+        <div class="rect">  
+            <img src="{% static 'homepage/img/contact.png' %}" class="section3img" alt="">
+            <p class="mt-3">Zero contact</p>
+        </div> 
+        <div class="rect"> 
+            <img src="{% static 'homepage/img/cost.png' %}" class="section3img" alt="">
+            <p class="mt-3">Cost Effective</p>
+         </div>    
+    </div>
+</div>

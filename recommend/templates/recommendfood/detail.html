@@ -1,0 +1,94 @@
+{% extends 'recommendfood/base.html'%}
+{% block title %}{{movies.title}}{% endblock %}
+
+{% block body %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <div class="alert alert-success">
+              <strong>Success!</strong> {{message}}
+            </div>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="container-fluid col-sm-offset-1">
+
+    <div class="row">
+        <!-- Left Food Info -->
+        <div class="col-sm-2 col-md-3">
+
+<br>
+<br>
+<br>
+<br>
+                    <a href="#">
+                        <img src="{{ movies.movie_logo.url}}" class="img-responsive" style="border-radius: 22px 22px 22px 22px;">
+                    </a>
+                    <h2></h2>
+
+        </div>
+        <!-- Right Movie Info -->
+        <br>
+        <br>
+        <div class="col-sm-offset-1 col-sm-4 col-md-4">
+            <h1 style="color:#fff">{{movies.title}}</h1>
+            <h3 style="color: Black"><small>Nutritional Details: {{movies.genre}}</small></h3>
+
+            <div class="col-sm-offset-0 col-sm-8">
+                <form class="form-horizontal" role="search" method="post" action="{% url 'detail2' movies.id %}" onsubmit="return validateForm()"  name="ratingForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-lg-14">
+                                    <div class="star-rating">
+                                        <span style="color: Black">Rate Dish</span>
+                                        <span style="color: Black" class="fa fa-star-o" data-rating="1"></span>
+                                        <span style="color: Black" class="fa fa-star-o" data-rating="2"></span>
+                                        <span style="color: Black" class="fa fa-star-o" data-rating="3"></span>
+                                        <span style="color: Black" class="fa fa-star-o" data-rating="4"></span>
+                                        <span style="color: Black" class="fa fa-star-o" data-rating="5"></span>
+                                        
+                                        {% if rate_flag %}
+                                            <input type="hidden" name="rating" class="rating-value" value="{{movie_rating}}" >
+                                        {% else %}
+                                            <input type="hidden" name="rating" class="rating-value" value="0">
+                                        {% endif %}
+                                        {% csrf_token %}
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" style="color: Black" class="button" value="Submit">
+                        </div>
+                    </div>
+                </form>
+
+                <form class="form-horizontal" role="search" method="post" action="{% url 'detail2' movies.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="star-rating">
+                                        <span style="color: Black" >Add to my list  </span>
+                                        {% if update %}
+                                        <input type="checkbox" name="watch" checked>
+                                        <input type="submit" class="button" value="Remove" name="watch">
+                                        {% else %}
+                                        <input type="checkbox" name="watch">
+                                        <input type="submit" class="button" value="Add">
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

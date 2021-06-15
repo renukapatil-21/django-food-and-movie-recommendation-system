@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{% block title %}Food{% endblock title %}</title>
+
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'recommend/css/bootstrap.min.css'%}">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' >
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='{% static "recommend/css/base.css" %}' />
+    <link rel='stylesheet' href='{% static "recommend/css/base1.css" %}' />
+
+    <style>
+        .text{
+            color: black;
+        }
+    </style>
+    
+</head>
+
+<body>
+	<nav class="navbar">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="topNavBar">
+
+                <ul class="nav navbar-nav p-2">
+                    <li class="nav-itemm"><a class="navbar-brand text-dark text" href="#" style="color:whitesmoke; font-size:2rem; text-decoration:none; :hover{outline: thin red solid}"><i class="fas fa-utensils fa-2x mx-3 "></i> BetterChoice </a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-itemm">
+                        <a href="{% url 'watch' %}" class="text" style="color:black; font-size:3rem; text-decoration:none;">
+                            <span aria-hidden="true"></span>MyList
+                        </a>
+                    </li>
+                 {% if not request.user.is_authenticated %}
+                    <li class="nav-itemm">
+                        <a href="{% url 'signup' %}" class="text" style="color:whitesmoke; font-size:3rem; text-decoration:none;">
+                            {% comment %} <span aria-hidden="true"></span>SignUp {% endcomment %}
+                        </a>
+                    </li>
+                    <li class="nav-itemm">
+                        <a href="{% url 'login' %}" class="text" style="color:whitesmoke; font-size:3rem; text-decoration:none;">
+                            {% comment %} <span aria-hidden="true"></span>Login {% endcomment %}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-itemm">
+                        <a href="{% url 'logout' %}" class="text" style="color:black; font-size:3rem; text-decoration:none;">
+                            <span aria-hidden="true" class="text-light"></span>&nbsp;Logout
+                        </a>
+                    </li>
+                {% endif %}
+                </ul>
+                 <ul class="nav navbar-nav  navbar-right text-light">
+                    <li class="nav-itemm"><a style="color:black; font-size:3rem; text-decoration:none;" class="text" href="{% url 'home' %}" >&nbsp; Home</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+    {% block body %}
+    {% endblock %}
+     <nav class="navbar navbar-bottom">
+
+    {% comment %} <footer class="page-footer font-small">
+        <hr>
+          <div class="text-center center-block">
+            <br />
+                <a href="https://www.linkedin.com/in/rajaprerak/" target="_blank"><i class="fa fa-linkedin-square fa-3x social" style="color:#fff"></i></a>
+                <a href="https://github.com/rajaprerak" target="_blank"><i id="social-git"class="fa fa-github-square fa-3x" style="color:#fff"></i></a>
+        </div>
+       
+    </footer> {% endcomment %}
+    
+        
+    </nav>
+    {% comment %} <hr>
+        <div class="container-fluid p-0 mt-3"> {% include 'homepage/footer.html' %} </div> {% endcomment %}
+
+    <script src="https://kit.fontawesome.com/c67f44dd52.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="{%static 'recommend/js/jquery.min.js'%}">
+	</script>
+
+	<script type="text/javascript" src="{%static 'recommend/js/bootstrap.min.js'%}">
+	</script>
+    <script type="text/javascript">
+    var $star_rating = $('.star-rating .fa');
+
+    var SetRatingStar = function() {
+        return $star_rating.each(function() {
+        if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+            return $(this).removeClass('fa-star-o').addClass('fa-star');
+        } else {
+        return $(this).removeClass('fa-star').addClass('fa-star-o');
+        }
+        });
+        };
+
+    $star_rating.on('click', function() {
+    $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+    return SetRatingStar();
+    });
+
+    SetRatingStar();
+    $(document).ready(function() {
+
+    });
+
+</script>
+<script type="text/javascript">
+    function validateForm(){
+    var x = document.forms["ratingForm"]["rating"].value;
+    if(x=="0"){
+        alert("Invalid Input");
+        return false;
+    }
+    }
+</script>
+
+
+
+</body>
+</html>

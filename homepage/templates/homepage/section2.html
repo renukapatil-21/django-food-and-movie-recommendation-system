@@ -1,0 +1,31 @@
+{% load static %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="pray">
+                <img src="{% static 'homepage/img/section2.png' %}" alt="">
+            </div> 
+        </div>
+        <div class="col-md-6">
+            <div class="panel text-left">
+                <h1>It's Movie Time!</h1>
+                <p class="pt-4">Enjoy your meal with the movies you like. And make your time <span style="color: #dd2476; font-family: bold;"> Delightful! </span> </p>    
+
+            <form class="form-inline">
+            <div class="col pl-2">
+                <div class="input-group pl-3 pt-5 pr-5">
+                    <input type="button" class="form-control bg-light text-danger" value="Search and Rate Movies" placeholder="Search For Movie">
+                    <div class="input-group-prepend">  
+                        <div class="input-group-text">
+                            
+                            <a href="{% url 'index' %}"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        </div>
+    </div>
+    
+</div>

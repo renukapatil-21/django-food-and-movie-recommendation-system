@@ -1,0 +1,74 @@
+:root{
+    --Snigle-font: "Sniglet", cursive;
+    --Rubik: "Rubik", cursive;
+    --Patua: "Patua One", cursive;
+    --Lobster: "Lobster", cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(
+        to bottom,
+        #dd2476,#ff512f);
+    --light-gray: rgba(255,255,255,0,0.877);
+}
+
+        body{
+            background: #dd2476;
+            background: var(--bggradient);
+        }
+         
+        /* body > a{
+            color: whitesmoke;
+        } */
+        element.style{
+            background-color:#ffffff;
+            
+        }
+        .thumbnail p, .thumbnail h4 {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            }
+        .star-rating {
+            line-height:32px;
+            font-size:1.25em;
+            margin-left:-33px;
+            }
+        .star-rating .fa-star{
+        color: yellow;
+        }
+        .heart-rating {
+            line-height:32px;
+            font-size:1.25em;
+            margin-left:-33px;
+            }
+        .heart-rating .fa-heart{
+        color:yellow;
+        }
+        .button {
+          background-color: whitesmoke;
+          border: none;
+          color: #ff512f;
+          padding: 10px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 4px;
+          cursor: pointer;
+          margin-left:45px;
+        }
+        .button1 {
+          background-color: whitesmoke;
+          border: none;
+          color: #ff512f;
+          padding: 12px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: -4px -4px;
+          cursor: pointer;
+          margin-left:4px;
+        }
+.nav-itemm{
+    color: whitesmoke !important;
+}
